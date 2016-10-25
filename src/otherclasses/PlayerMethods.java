@@ -2,8 +2,6 @@ package otherclasses;
 
 import java.io.File;
 
-import javax.swing.JFileChooser;
-
 import interfaces.PlayerInterface;
 
 import jaco.mp3.player.MP3Player;
@@ -26,10 +24,6 @@ public class PlayerMethods implements PlayerInterface{
 	private MP3Player player = new MP3Player() ;
 	
 	
-	/**
-	 * This method take a mp3 file and add it to playlist 
-	 * then plays it. if the playlist already has a track
-	 */
 	@Override
 	public void open(File file) {
 	
@@ -44,9 +38,6 @@ public class PlayerMethods implements PlayerInterface{
 		
 	}
 
-	/**
-	 * This method plays the selected file
-	 */
 	@Override
 	public void play() {
 		
@@ -58,9 +49,7 @@ public class PlayerMethods implements PlayerInterface{
 		}
 	}
 
-	/**
-	 * This method pauses the selected file from playing.
-	 */
+	
 	@Override
 	public void pause() {
 		
@@ -68,9 +57,7 @@ public class PlayerMethods implements PlayerInterface{
 		
 	}
 
-	/**
-	 * This method stops the selected file from playing.
-	 */
+	
 	@Override
 	public void stop() {
 		
