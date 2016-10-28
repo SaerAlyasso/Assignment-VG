@@ -19,7 +19,6 @@ public class Main {
 	/**
 	 * This is the main method who creates an object of the class ViewClass
 	 * @param args unused
-	 * @return nothing
 	 */
 	public static void main(String[] args) {
 		

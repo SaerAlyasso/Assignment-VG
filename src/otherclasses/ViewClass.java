@@ -40,7 +40,7 @@ public class ViewClass implements ActionListener {
 	 final JFileChooser fileChooser = new JFileChooser();
 	
 	//creating a filter to the JFileChooser fileChooser
-	 FileNameExtensionFilter filter = new FileNameExtensionFilter("mp3 files","mp3");
+	 private FileNameExtensionFilter filter = new FileNameExtensionFilter("mp3 files","mp3");
 	
 	// creating frame, label and buttons	
 	private JFrame frame = new JFrame();
@@ -65,7 +65,7 @@ public class ViewClass implements ActionListener {
 	/**
 	 * This method sets the  properties for the frame and the contents.
 	 */
-	private void createGUI() {
+	public void createGUI() {
 		
 		// setting properties of the frame
 		frame.getContentPane().setBackground(UIManager.getColor("controlDkShadow"));
@@ -123,8 +123,8 @@ public class ViewClass implements ActionListener {
 	
 	/**
 	 * actionPerformed is a method in listener interface. Here we write code
-	 * that reacts to the action.
-	 * @param ActionEvent e gives information about the event and its source.
+	 * that reacts to the action. ActionEvent e gives information about the 
+	 * event and its source.
 	 */
 	public void actionPerformed(ActionEvent e){
 		
@@ -139,6 +139,7 @@ public class ViewClass implements ActionListener {
 				File file = fileChooser.getSelectedFile();
 				musicLabel.setText("Music: "+file.getName());
 				playerMehtods.open(file);
+				
 			}
 		}
 		

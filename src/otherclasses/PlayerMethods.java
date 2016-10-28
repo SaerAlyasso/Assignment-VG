@@ -73,7 +73,7 @@ public class PlayerMethods implements PlayerInterface{
 	@Override
 	public void stop() {
 		
-		if(isPlaying){
+		if(isPlaying || player.isPaused()){
 		player.stop();
 		isPlaying = false;
 		}

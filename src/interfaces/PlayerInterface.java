@@ -17,7 +17,7 @@ public interface PlayerInterface {
 	 * This method takes a mp3 file and add it to playlist 
 	 * then plays it.If the playlist already has a track
 	 * it will be removed before adding the new one.
-	 * @param file
+	 * @param file take a file as a parameter.
 	 */
 	public void open(File file);
 	
