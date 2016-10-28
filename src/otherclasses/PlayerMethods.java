@@ -24,6 +24,7 @@ public class PlayerMethods implements PlayerInterface{
 	// creating a MP3Player object player.
 	private MP3Player player = new MP3Player() ;
 	
+	// creating a boolean checking player status.
 	private boolean isPlaying;
 	
 	
@@ -35,7 +36,6 @@ public class PlayerMethods implements PlayerInterface{
 		if(player.getPlayList().size()!=0){
 			player.getPlayList().clear();
 		}
-		
 		
 		player.addToPlayList(file);
 		player.play();
