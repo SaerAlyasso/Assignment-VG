@@ -1,6 +1,6 @@
 package otherclasses;
 
-import java.awt.EventQueue;
+
 
 
 
@@ -8,6 +8,7 @@ import otherclasses.PlayerMethods;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileFilter;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,6 +17,7 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import java.awt.Color;
 import javax.swing.UIManager;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 
@@ -36,8 +38,11 @@ public class ViewClass implements ActionListener {
 	PlayerMethods playerMehtods = new PlayerMethods();
 
 	//creating a file chooser
-	final JFileChooser fileChooser = new JFileChooser();
-
+	 final JFileChooser fileChooser = new JFileChooser();
+	
+	//creating a filter to the JFileChooser fileChooser
+	 FileNameExtensionFilter filter = new FileNameExtensionFilter("mp3 files","mp3");
+	
 	// creating frame, label and buttons	
 	private JFrame frame = new JFrame();
 	private JLabel musicLabel = new JLabel("Music: ");
@@ -97,6 +102,10 @@ public class ViewClass implements ActionListener {
 		frame.getContentPane().add(pauseButton);
 		frame.getContentPane().add(stopButton);
 		
+		//setting the created filter to fileChooser
+		fileChooser.setAcceptAllFileFilterUsed(false);
+		fileChooser.setFileFilter(filter);
+		
 		
 		frame.setVisible(true);
 	}
@@ -137,11 +146,13 @@ public class ViewClass implements ActionListener {
 		// if you click on play
 		if(e.getSource()== playButton){
 			playerMehtods.play();
+			
 		}
 		
 		// if you click on pause
 		if(e.getSource()== pauseButton){
 			playerMehtods.pause();
+			
 		}
 		
 		// if you click on stop

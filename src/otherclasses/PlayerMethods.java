@@ -1,5 +1,6 @@
 package otherclasses;
 
+
 import java.io.File;
 
 import interfaces.PlayerInterface;
@@ -23,6 +24,9 @@ public class PlayerMethods implements PlayerInterface{
 	// creating a MP3Player object player.
 	private MP3Player player = new MP3Player() ;
 	
+	private boolean isPlaying;
+	
+	
 	
 	@Override
 	public void open(File file) {
@@ -32,20 +36,25 @@ public class PlayerMethods implements PlayerInterface{
 			player.getPlayList().clear();
 		}
 		
+		
 		player.addToPlayList(file);
 		player.play();
 		
+		isPlaying=true;
 		
+
 	}
 
 	@Override
 	public void play() {
 		
-		if(player.isPaused()||player.isStopped()){
+		if(!isPlaying&&(player.getPlayList().size()!=0)){
 		
-		
+
 		player.play();
 		
+		isPlaying = true;
+	
 		}
 	}
 
@@ -53,7 +62,10 @@ public class PlayerMethods implements PlayerInterface{
 	@Override
 	public void pause() {
 		
+		if(isPlaying){
 		player.pause();
+		isPlaying = false;
+		}
 		
 	}
 
@@ -61,8 +73,10 @@ public class PlayerMethods implements PlayerInterface{
 	@Override
 	public void stop() {
 		
+		if(isPlaying){
 		player.stop();
-		
+		isPlaying = false;
+		}
 	}
 
 	/**
