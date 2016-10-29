@@ -128,6 +128,8 @@ public class ViewClass implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent e){
 		
+		
+		
 		// if you click on open
 		if(e.getSource()== openButton){
 			if(playerMehtods.getPlayer().getPlayList().size()!=0){
@@ -139,8 +141,10 @@ public class ViewClass implements ActionListener {
 				File file = fileChooser.getSelectedFile();
 				musicLabel.setText("Music: "+file.getName());
 				playerMehtods.open(file);
-				
+		
 			}
+			
+			
 		}
 		
 		// if you click on play

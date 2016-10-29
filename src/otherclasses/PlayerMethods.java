@@ -48,7 +48,7 @@ public class PlayerMethods implements PlayerInterface{
 	@Override
 	public void play() {
 		
-		if(!isPlaying&&(player.getPlayList().size()!=0)){
+		if((player.getPlayList().size()!=0)&&(player.isPaused() || player.isStopped() )){
 		
 
 		player.play();
