@@ -33,7 +33,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class ViewClass implements ActionListener {
 
 	// creating PlayerMethods object
-	
 	PlayerMethods playerMehtods = new PlayerMethods();
 
 	//creating a file chooser
